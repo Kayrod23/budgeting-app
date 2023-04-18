@@ -16,7 +16,7 @@ body {
     height: "100vh";
 }
 
-.welcomeCard {
+.homeCard {
     background-color: aliceblue;
     margin: 0;
     position: absolute;
@@ -29,6 +29,6 @@ body {
     border-radius: 5px;
     padding: 10px;
     box-shadow: 10px 10px 5px #666;
-    height: 20%;
+    height: 25%;
     width: 40%;
 }

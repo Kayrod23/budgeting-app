@@ -5,7 +5,7 @@ import "../Styles/nav.css"
 function Nav() {
   return (
     <nav>
-        <h1>Budgeting App</h1>
+        <Link to={"/"}><h1>Budgeting App</h1></Link>
         <div>
           <Link to="/transaction/new"><button>New Transaction</button></Link>
         </div>

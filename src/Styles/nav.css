@@ -7,10 +7,9 @@ nav {
     box-shadow: 2px 2px 4px grey;
 }
 
-/* a {
+a {
     text-decoration: none;
-    color: #4442a5;
-} */
+}
 
 nav h1 {
   color: #4CAF50;

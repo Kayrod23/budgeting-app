@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
+  let sum = 0;
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/transactions`)
@@ -15,11 +16,17 @@ function Transactions() {
     })
   }, []);
 
+  transactions.forEach(transaction => {
+    sum += parseInt(transaction.amount);
+  });
+
   return (
-    <div>
+    <div className="transactionCard">
+      <h1>Transactions</h1>
+      <h3>Bank Account Total: ${sum}</h3>
       <table>
         <tbody>
-            {transactions ? transactions.map((transaction, index) => 
+            {transactions ? transactions.map((transaction, index) =>  
               <tr key={index}>
                 <td>{transaction.date}</td>
                 <td><Link to={`/transaction/${index}`}>{transaction.itemName}</Link></td>

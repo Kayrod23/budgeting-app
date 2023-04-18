@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function Home() {
   return (
     <div className="home" >
-      <div className="welcomeCard">
+      <div className="homeCard">
         <h1>Welcome to the Budgeting App</h1>
         <Link to={"/transactions"}><button>View Transactions</button></Link>
       </div>

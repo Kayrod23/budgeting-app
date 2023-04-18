@@ -1,9 +1,10 @@
 import React from 'react'
 import Transactions from '../Components/Transactions'
+import "../Styles/transactions.css"
 
 function TransactionsPage() {
   return (
-    <div>Transactions and
+    <div>
       <Transactions/>
     </div>
   )
