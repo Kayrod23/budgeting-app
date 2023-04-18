@@ -22,7 +22,7 @@ function NewTransaction() {
         event.preventDefault();
         axios.post(`${process.env.REACT_APP_API_URL}/transactions`, newTransaction)
         .then(() => {
-            navigate("/transactions");
+            navigate(`/transactions`);
         })
         .catch((error) => {
             console.log("catch", error);
