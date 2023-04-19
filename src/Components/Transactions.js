@@ -39,6 +39,7 @@ function Transactions() {
     <div className="transactionCard">
       <h1>Transactions</h1>
       <h3>Bank Account Total: <p className={colorCode()}>{sum}</p></h3>
+      <section>
       <table>
         <tbody>
             {transactions ? transactions.map((transaction, index) =>  
@@ -50,6 +51,7 @@ function Transactions() {
             ) : null}
             </tbody>
       </table>
+      </section>
     </div>
   )
 }
