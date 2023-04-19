@@ -6,8 +6,6 @@ function Transaction() {
   const [transaction, setTransaction] = useState({});
   const { index } = useParams();
   let navigate = useNavigate();
-
-  const months = ["January", "February", "March", "April", "May", "June", "July", "Auguest", "September", "October", "November", "December"]
   
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/transactions/${index}`)
@@ -17,7 +15,7 @@ function Transaction() {
     .catch((error) => {
       console.log(error);
     })
-  }, []);
+  }, [index]);
 
   function handleDelete () {
     axios.delete(`${process.env.REACT_APP_API_URL}/transactions/${index}`)

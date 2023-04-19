@@ -21,7 +21,7 @@ function NewTransaction() {
         .then((res) => {
             setLength(res.data.length)
         })
-    })
+    }, [])
 
     function handleTextChange (event) {
         setNewTransaction({ ...newTransaction, [event.target.id]: event.target.value });
