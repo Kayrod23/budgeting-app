@@ -1,13 +1,13 @@
 import React from 'react'
-import Transaction from '../Components/Transaction'
+import Transactions from '../Components/Transactions'
+import "../Styles/transactions.css"
 
 function Index() {
   return (
     <div>
-      <h1>Transaction Details</h1>
-      <Transaction/>
+      <Transactions/>
     </div>
   )
 }
 
-export default Index
+export default Index;

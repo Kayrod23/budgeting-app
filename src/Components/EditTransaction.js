@@ -8,6 +8,7 @@ function EditTransaction() {
         id: v4(),
         itemName: "",
         amount: 0,
+        deposit: false,
         date: "",
         from: "",
         category: ""
@@ -17,6 +18,10 @@ function EditTransaction() {
 
     function handleTextChange (event) {
         setEditTransaction({ ...editTransaction, [event.target.id]: event.target.value });
+    }
+
+    function handleCheckboxChange (event) {
+        setEditTransaction({ ...editTransaction, deposit: event.target.checked});
     }
 
     useEffect(() => {
@@ -41,39 +46,53 @@ function EditTransaction() {
     }
 
   return (
-    <div>
+    <div className="formCard">
     <form onSubmit={handleSubmit}>
-        <label>Date: </label>
+        <label htmlFor='date'>Date: </label>
         <input 
-        type="text" 
-        id="date" 
+        type="date" 
+        id="date"
+        name="date" 
         onChange={handleTextChange}
         value={editTransaction.date}/>
-        <label>Name: </label>
+        <label htmlFor='itemname'>Name: </label>
         <input 
         type="text" 
         id="itemName"
+        name="itemName"
         onChange={handleTextChange}
         value={editTransaction.itemName}/>
-        <label>From: </label>
+        <label html="from">From: </label>
         <input 
         type="text" 
         id="from"
+        name="from"
         onChange={handleTextChange}
         value={editTransaction.from}/>
-        <label>Amount: </label>
+        <label htmlFor='amount'>Amount: </label>
         <input 
         type="number" 
         id="amount"
+        name="amount"
         onChange={handleTextChange}
         value={editTransaction.amount}/>
-        <label>Category: </label>
+        <label htmlFor='deposit'>Toggle Deposit: </label>
+        <input 
+        type="checkbox" 
+        id="deposit"
+        name="deposit"
+        checked={editTransaction.deposit} 
+        onChange={handleCheckboxChange}/>
+        <label htmlFor='category'>Category: </label>
         <input 
         type="text"
         id="category"
+        name="category"
         onChange={handleTextChange}
         value={editTransaction.category}/>
-        <input type="submit"/>
+        <div>
+            <button type="submit" className="buttonSubmit">Submit</button>
+        </div>
     </form>
 </div>
   )

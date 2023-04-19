@@ -17,20 +17,35 @@ function Transactions() {
   }, []);
 
   transactions.forEach(transaction => {
-    sum += parseInt(transaction.amount);
+    if(transaction.deposit) {
+      sum += parseInt(transaction.amount);
+    } else {
+      sum -= parseInt(transaction.amount);
+    }
   });
+
+  function colorCode (color) {
+    if (sum >= 100) {
+      color = "green"
+    } else if (sum <= 0) {
+      color = "red"
+    } else {
+      color = "yellow"
+    }
+    return color
+  }
 
   return (
     <div className="transactionCard">
       <h1>Transactions</h1>
-      <h3>Bank Account Total: ${sum}</h3>
+      <h3>Bank Account Total: <p className={colorCode()}>{sum}</p></h3>
       <table>
         <tbody>
             {transactions ? transactions.map((transaction, index) =>  
               <tr key={index}>
                 <td>{transaction.date}</td>
                 <td><Link to={`/transaction/${index}`}>{transaction.itemName}</Link></td>
-                <td>${transaction.amount}</td>
+                <td>{transaction.deposit ? "" : "-"}${transaction.amount}</td>
               </tr>
             ) : null}
             </tbody>

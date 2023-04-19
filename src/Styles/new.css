@@ -1,0 +1,26 @@
+.formCard {
+    background-color: aliceblue;
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 10px 10px 5px #666;
+    height: fit-content;
+    width: 40%;
+}
+
+form {
+    width: 90%;
+    display: grid;
+    margin: auto;
+}
+
+.buttonSubmit {
+    padding: 10px 20px;
+}

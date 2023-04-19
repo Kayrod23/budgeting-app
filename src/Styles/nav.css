@@ -18,7 +18,6 @@ nav h1 {
 
 button {
     display: inline-block;
-    padding: 15px 25px;
     font-size: 15px;
     cursor: pointer;
     text-align: center;
@@ -30,6 +29,11 @@ button {
     border-radius: 15px;
     box-shadow: 0 9px #999;
     text-shadow: 1px 1px grey;
+}
+
+a button {
+    padding: 15px 25px;
+    color: black;
 }
   
 button:hover {

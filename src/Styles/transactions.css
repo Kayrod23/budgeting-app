@@ -14,3 +14,20 @@
     height: fit-content;
     width: 60%;
 }
+
+.green, .red, .yellow {
+    display: inline;
+    text-shadow: 1px 1px black;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: yellow;
+}
