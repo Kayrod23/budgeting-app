@@ -32,7 +32,7 @@ function EditTransaction() {
         .catch((error) => {
             console.log("catch", error);
         })
-    }, [])
+    }, [index])
 
     function handleSubmit (event) {
         event.preventDefault();
